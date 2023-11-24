@@ -13,19 +13,13 @@ class TrainTestSplit:
         sampleFile2 = "data/processed/populationSample2.csv"
         sampleFile3 = "data/processed/populationSample3.csv"
         sampleFile4 = "data/processed/populationSample4.csv"
-        sampleFile5 = "data/processed/populationSample5.csv"
-        sampleFile6 = "data/processed/populationSample6.csv"
-        sampleFile7 = "data/processed/populationSample7.csv"
 
         sample1 = pd.read_csv(sampleFile1, header = None)
         sample2 = pd.read_csv(sampleFile2, header = None)
         sample3 = pd.read_csv(sampleFile3, header = None)
         sample4 = pd.read_csv(sampleFile4, header = None)
-        sample5 = pd.read_csv(sampleFile5, header = None)
-        sample6 = pd.read_csv(sampleFile6, header = None)
-        sample7 = pd.read_csv(sampleFile7, header = None)
 
-        sample = pd.concat([sample1, sample2, sample3, sample4, sample5, sample6, sample7])
+        sample = pd.concat([sample1, sample2, sample3, sample4])
         
         train, test = train_test_split(sample, test_size=0.2, random_state=0)
 

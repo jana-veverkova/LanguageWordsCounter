@@ -4,7 +4,7 @@ import csv
 import math
 from p_tqdm import p_map, p_umap, p_imap, p_uimap
 from tqdm import tqdm
-import src.data.frequencyDictionary as fd
+import  frequencyDictionary as fd
 
 class PopulationSample:
     def __init__(self):
@@ -21,16 +21,13 @@ class PopulationSample:
         self.requieredOccurence = 15
 
         n1 = np.arange(1000, 1000000, 1000)
-        n2 = np.arange(1000000, 2000000, 1000)
-        n3 = np.arange(2000000, 3000000, 1000)
-        n4 = np.arange(3000000, 4000000, 1000)
-        n5 = np.arange(4000000, 5000000, 1000)
-        n6 = np.arange(5000000, 6000000, 1000)
-        n7 = np.arange(5000000, 8000000, 3000)
+        n2 = np.arange(1000000, 3000000, 2000)
+        n3 = np.arange(3000000, 6000000, 3000)
+        n4 = np.arange(6000000, 10000000, 4000)
 
-        results = p_map(self.generatePersonSample, n7)
+        results = p_map(self.generatePersonSample, n4)
 
-        with open('data/processed/populationSample7.csv', 'w') as f:
+        with open('data/processed/populationSample4.csv', 'w') as f:
             writer = csv.writer(f)
             print(f"File is opened.")
             for sample in tqdm(results):

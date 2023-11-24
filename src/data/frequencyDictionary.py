@@ -1,4 +1,4 @@
-import src.data.wordExtractor as we
+import wordExtractor as we
 import csv
 
 class FrequencyDictionary:

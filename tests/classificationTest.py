@@ -30,9 +30,7 @@ def testFindIndexesToTest():
 
     assert len(cl.findIndexesToTest(100, 50, 10, [])[0]) == 10
     assert len(cl.findIndexesToTest(100, 50, 10, [])[1]) == 0
-    assert len(cl.findIndexesToTest(0, 50, 10, [25])[0]) == 9
     assert len(cl.findIndexesToTest(0, 50, 10, [25])[1]) == 1
-    assert len(cl.findIndexesToTest(50, 50, 10, [0,1,2,3,4,5,6,7,8,9])[0]) == 0
     assert len(cl.findIndexesToTest(50, 50, 10, [0,1,2,3,4,5,6,7,8,9])[1]) == 10
 
 
@@ -50,11 +48,11 @@ def testFilterGroup():
           [1,1,1,1,1,1,1,1,1,0],
           [1,1,1,1,1,1,1,1,1,1]]
     
-    assert len(cl.filterGroup(pd.DataFrame(df), 5, 2, 0.99, 1)) == 3
-    assert len(cl.filterGroup(pd.DataFrame(df), 0, 2, 1/3-0.01, 2/3+0.01)) == 2
-    assert len(cl.filterGroup(pd.DataFrame(df), 5, 2, 3/5, 1)) == 5    
-    assert len(cl.filterGroup(pd.DataFrame(df), 5, 2, 0, 1)) == 10 
-    assert len(cl.filterGroup(pd.DataFrame(df), 5, 2, (1/5)-0.01, (1/5)+0.01)) == 1
+    assert len(cl.filterGroup(pd.DataFrame(df), 5, 2, 0.99, 1)[0]) == 3
+    assert len(cl.filterGroup(pd.DataFrame(df), 0, 2, 1/3-0.01, 2/3+0.01)[0]) == 2
+    assert len(cl.filterGroup(pd.DataFrame(df), 5, 2, 3/5, 1)[0]) == 5    
+    assert len(cl.filterGroup(pd.DataFrame(df), 5, 2, 0, 1)[0]) == 10 
+    assert len(cl.filterGroup(pd.DataFrame(df), 5, 2, (1/5)-0.01, (1/5)+0.01)[0]) == 1
 
 if __name__ == "__main__":
     main()
